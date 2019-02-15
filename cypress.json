@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "coverageFolder": "coverage",
+  "video": false,
+  "viewportHeight": 900,
+  "viewportWidth": 1600
+}

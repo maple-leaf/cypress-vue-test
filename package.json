@@ -1,0 +1,50 @@
+{
+  "name": "cypress-vue-unit",
+  "version": "0.0.1",
+  "description": "cypress vue unit test boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "dev": "start-server-and-test webpack-serve http-get://localhost:8080 cy:open",
+    "webpack-serve": "webpack-dev-server --hot --config webpack.dev.js",
+    "serve": "node server.js",
+    "test": "rm -rf coverage && start-server-and-test serve :8080 cy:run && nyc report -t=coverage",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "coverage": "nyc report -t=coverage"
+  },
+  "keywords": [
+    "cypress",
+    "vue",
+    "unit",
+    "test"
+  ],
+  "author": "maple-leaf",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@cypress/webpack-preprocessor": "^4.0.2",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-plugin-istanbul": "^5.1.0",
+    "cypress": "^3.1.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nyc": "^13.1.0",
+    "start-server-and-test": "^1.7.11",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.1.5"
+  },
+  "dependencies": {
+    "vue": "^2.5.21"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "cypress"
+    ]
+  }
+}
