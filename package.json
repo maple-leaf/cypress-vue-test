@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "start-server-and-test webpack-serve http-get://localhost:8080 cy:open",
     "webpack-serve": "webpack-dev-server --hot --config webpack.dev.js",
-    "serve": "node server.js",
-    "test": "rm -rf coverage && start-server-and-test serve :8080 cy:run && nyc report -t=coverage",
+    "test": "rm -rf coverage && start-server-and-test webpack-serve http-get://localhost:8080 cy:run && nyc report -t=coverage",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "coverage": "nyc report -t=coverage"
