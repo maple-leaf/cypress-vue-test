@@ -3,8 +3,6 @@ const baseConfig = require('./webpack.base.js');
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-baseConfig.module.rules[0].use.options['plugins'] = ['istanbul'];
-
 const config = webpackMerge(baseConfig, {
     mode: 'development',
     entry: './main.js',

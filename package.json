@@ -4,7 +4,7 @@
   "description": "cypress vue unit test boilerplate",
   "main": "index.js",
   "scripts": {
-    "dev": "start-server-and-test webpack-serve http-get://localhost:8080 cy:open",
+    "dev": "ENV='test' start-server-and-test webpack-serve http-get://localhost:8080 cy:open",
     "webpack-serve": "webpack-dev-server --hot --config webpack.dev.js",
     "test": "rm -rf coverage && start-server-and-test webpack-serve http-get://localhost:8080 cy:run && nyc report -t=coverage",
     "cy:run": "cypress run",

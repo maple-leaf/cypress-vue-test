@@ -14,7 +14,9 @@
 const webpack = require('@cypress/webpack-preprocessor');
 const config = require('../../webpack.base')
 config.mode = 'development';
-config.module.rules[0].use.options['plugins'] = ['istanbul'];
+config.module.rules[0].use.options = {
+    plugins: ['istanbul']
+};
 
 module.exports = (on) => {
   const options = {
