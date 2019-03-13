@@ -7,7 +7,7 @@
     "dev": "ENV='test' start-server-and-test webpack-serve http-get://localhost:8080 cy:open",
     "webpack-serve": "webpack-dev-server --hot --config webpack.dev.js",
     "test": "rm -rf coverage && start-server-and-test webpack-serve http-get://localhost:8080 cy:run && nyc report -t=coverage",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --browser=chrome",
     "cy:open": "cypress open",
     "coverage": "nyc report -t=coverage"
   },
@@ -25,7 +25,8 @@
     "@cypress/webpack-preprocessor": "^4.0.2",
     "@vue/test-utils": "^1.0.0-beta.28",
     "babel-plugin-istanbul": "^5.1.0",
-    "cypress": "^3.1.4",
+    "babel-plugin-rewire": "^1.2.0",
+    "cypress": "^3.1.5",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "nyc": "^13.1.0",
