@@ -24,6 +24,8 @@ describe('test app', () => {
         button.trigger('click');
         expect(wrapper.vm.value).to.equal(2);
         expect(wrapper.html()).to.contain('<div>Counter value is 2 now</div>')
+        wrapper.find('#xx').trigger('click');
+        expect(wrapper.vm.items.length).to.equal(2);
     });
 });
 
